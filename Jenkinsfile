@@ -3,10 +3,11 @@ pipeline {
         docker { image 'node:22.13.1-alpine3.21' }
     }
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh 'node --eval "console.log(process.arch,process.platform)"'
+                echo 'Building inside Docker container'
             }
         }
     }
 }
+
